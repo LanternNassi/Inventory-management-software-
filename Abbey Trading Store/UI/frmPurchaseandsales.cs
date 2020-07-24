@@ -9,6 +9,9 @@ using System.Transactions;
 using System.Windows.Forms;
 using Abbey_Trading_Store.DAL;
 using DGVPrinterHelper;
+using System.Data.OleDb;
+using Microsoft.Reporting.WinForms;
+using Abbey_Trading_Store.Invoice;
 
 namespace Abbey_Trading_Store.UI
 {
@@ -20,6 +23,7 @@ namespace Abbey_Trading_Store.UI
         }
 
         DataTable dt = new DataTable();
+        DataTable dts = new DataTable();
         product product = new product();
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,7 +52,18 @@ namespace Abbey_Trading_Store.UI
             dt.Columns.Add("Quantity");
             dt.Columns.Add("Rate");
             dt.Columns.Add("Total");
+
+            dts.Columns.Add("ID");
+            dts.Columns.Add("type");
+            dts.Columns.Add("dea_cust_name");
+            dts.Columns.Add("grandTotal");
+            dts.Columns.Add("transaction_date");
+            dts.Columns.Add("discount");
+            dts.Columns.Add("added_by");
+            dts.Columns.Add("Paid amount");
+            dts.Columns.Add("Return amount");
             Types.Text = frmUserDashboard.type;
+            this.reportViewer1.RefreshReport();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -160,6 +175,7 @@ namespace Abbey_Trading_Store.UI
 
         private void save_Click(object sender, EventArgs e)
         {
+
             string course;
             if (Types.Text == "Sales")
             {
@@ -204,6 +220,7 @@ namespace Abbey_Trading_Store.UI
                 bool test = DC.Insert();
                 if (test == true)
                 {
+
                     //MessageBox.Show("inserted successfully");
                 }
                 else
@@ -224,7 +241,12 @@ namespace Abbey_Trading_Store.UI
             transact.GrandTotal = int.Parse(grandtotal.Text);
             transact.Transaction_date = DateTime.Now;
             transact.Type = course;
-            bool x = transact.Insert(out Transactionid);
+            transact.Return_amount = int.Parse(return_amount.Text);
+            transact.Paid_amount = int.Parse(paid_amount.Text);
+
+            // adding transaction to dataTable dts
+            dts.Rows.Add("2", transact.Type, name.Text, grandtotal.Text, DateTime.Now, textBox13.Text, Login_form.user, paid_amount.Text, return_amount.Text);
+            int x = transact.Insert();
             TransactionDetail TD = new TransactionDetail();
             int recorder = 0;
             int i;
@@ -235,7 +257,8 @@ namespace Abbey_Trading_Store.UI
                 TD.Rate = decimal.Parse(dt.Rows[i][2].ToString());
                 TD.Total = decimal.Parse(dt.Rows[i][3].ToString());
                 TD.Dea_Cust_name = name.Text;
-                TD.Added_by = Login_form.user;               
+                TD.Added_by = Login_form.user;
+                TD.invoice_id = x;
                 bool y = TD.Insert();
                 recorder += 1;
                 if (Types.Text == "Sales")
@@ -251,27 +274,11 @@ namespace Abbey_Trading_Store.UI
                     
             }
                 
-            //success = x && ((recorder-1)==dt.Rows.Count);
             success = (recorder == dt.Rows.Count) && check;
             if (success)
             {
-                //scope.Complete();
-
-                //Code to print Bill
-                DGVPrinter Printer = new DGVPrinter();
-                Printer.Title = "\r\n\r\n\r\n ABBEY TRADING STORE \r\n\r\n";
-                Printer.SubTitle = "Masaka Buddu Street \r\n Phone: 0758989094\r\n\r\n";
-                Printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
-                Printer.PageNumbers = true;
-                Printer.PageNumberInHeader = false;
-                Printer.PorportionalColumns = true;
-                Printer.HeaderCellAlignment = StringAlignment.Near;
-                Printer.Footer = "Discount:" + textBox13.Text + "\r\n" + "Grand Total:"+grandtotal.Text+"\r\n"+"Thank you for doing business with us";
-                Printer.FooterSpacing = 15;
-                Printer.PrintDataGridView(dgv_products);
-                
-
-                MessageBox.Show("Transaction successfully completed.");
+               
+                //MessageBox.Show("Transaction successfully completed.");
                 textBox1.Text = "";
                 name.Text = course;
                 email.Text = "Lanternnassi@gmail.com";
@@ -289,6 +296,36 @@ namespace Abbey_Trading_Store.UI
                 dgv_products.DataSource = null;
                 textBox13.Text = "0";
                 paid_amount.Text = "0.00";
+                invoice_txtbx.Text = x.ToString();
+                
+
+                // printing an invoice
+                const string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
+                OleDbConnection conn = new OleDbConnection(connection);
+
+                string cmd = "SELECT * FROM `Transactions` WHERE ID = "+ x +" ";
+                string cmd2 = "SELECT `product_name` , `Qty` , `rate` , `total` FROM `Transaction Details` WHERE Invoice_id = " + x + " ";
+
+                OleDbDataAdapter adapter = new OleDbDataAdapter(cmd, conn);
+                OleDbDataAdapter adapter2 = new OleDbDataAdapter(cmd2, conn);
+
+                Abbey_Trading_StoreDataSet dataset = new Abbey_Trading_StoreDataSet();
+                conn.Open();
+                
+                adapter2.Fill(dataset, "Datatable_invoice");
+                adapter.Fill(dataset, "DataTable_Details2");
+                conn.Close();
+
+                ReportDataSource datasource = new ReportDataSource("DataSet_Report", dataset.Tables[0]);
+                ReportDataSource datasource2 = new ReportDataSource("DataSet_details", dataset.Tables[1]);
+
+                this.reportViewer1.LocalReport.DataSources.Clear();
+                this.reportViewer1.LocalReport.DataSources.Add(datasource2);
+                this.reportViewer1.LocalReport.DataSources.Add(datasource);
+                this.reportViewer1.RefreshReport();
+               
+               
+
 
                     
             }
@@ -319,6 +356,35 @@ namespace Abbey_Trading_Store.UI
             
 
 
+        }
+
+        private void generate_invoice_Click(object sender, EventArgs e)
+        {
+            int invoice_id = int.Parse(this.invoice_txtbx.Text);
+            string cmd = "SELECT * FROM Transactions WHERE ID = " + invoice_id + " ";
+            string cmd2 = "SELECT `product_name` , `Qty` , `rate` , `total` FROM `Transaction Details` WHERE Invoice_id = " + invoice_id + " ";
+
+            const string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
+
+            OleDbConnection conn = new OleDbConnection(connection);
+
+            OleDbDataAdapter adapter = new OleDbDataAdapter(cmd, conn);
+            OleDbDataAdapter adapter2 = new OleDbDataAdapter(cmd2, conn);
+
+            Abbey_Trading_StoreDataSet dataset = new Abbey_Trading_StoreDataSet();
+
+            conn.Open();
+            adapter.Fill(dataset, "DataTable_Details2");
+            adapter2.Fill(dataset, "Datatable_invoice");
+            conn.Close();
+
+            ReportDataSource datasource = new ReportDataSource("DataSet_Report", dataset.Tables[0]);
+            ReportDataSource datasource2 = new ReportDataSource("DataSet_details", dataset.Tables[1]);
+
+            reportViewer1.LocalReport.DataSources.Clear();
+            reportViewer1.LocalReport.DataSources.Add(datasource);
+            reportViewer1.LocalReport.DataSources.Add(datasource2);
+            this.reportViewer1.RefreshReport();
         }
     }
 }

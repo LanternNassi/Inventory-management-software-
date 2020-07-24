@@ -27,9 +27,9 @@ namespace Abbey_Trading_Store.UI
             
             name.Text = "";
             password.Text = "";
-            gender.Text = "";
+            this.gender_cmbx.Text = "";
             added_by.Text = "";
-            type.Text = "";
+            type_cmbx.Text = "";
 
         }
 
@@ -46,9 +46,9 @@ namespace Abbey_Trading_Store.UI
             Users user = new Users();
             user.user = name.Text;
             user.password = password.Text;
-            user.gender = gender.Text;
-            user.added_by = added_by.Text;
-            user.type = type.Text;
+            user.gender = gender_cmbx.Text;
+            user.added_by = Login_form.user;
+            user.type = type_cmbx.Text;
             bool result = user.insert();
             if (result == true)
             {
@@ -79,9 +79,9 @@ namespace Abbey_Trading_Store.UI
             
             name.Text = dataGridView1.Rows[rowindex].Cells[1].Value.ToString();
             password.Text = dataGridView1.Rows[rowindex].Cells[2].Value.ToString();
-            gender.Text = dataGridView1.Rows[rowindex].Cells[3].Value.ToString();
+            gender_cmbx.Text = dataGridView1.Rows[rowindex].Cells[3].Value.ToString();
             added_by.Text = dataGridView1.Rows[rowindex].Cells[4].Value.ToString();
-            type.Text = dataGridView1.Rows[rowindex].Cells[5].Value.ToString();
+            type_cmbx.Text = dataGridView1.Rows[rowindex].Cells[5].Value.ToString();
             search.Text = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
         }
 
@@ -90,9 +90,9 @@ namespace Abbey_Trading_Store.UI
             Users user = new Users();
             user.user = name.Text;
             user.password = password.Text;
-            user.gender = gender.Text;
+            user.gender = gender_cmbx.Text;
             user.added_by = added_by.Text;
-            user.type = type.Text;
+            user.type = type_cmbx.Text;
             bool result = user.update(search.Text);
             if (result == true)
             {
@@ -100,7 +100,7 @@ namespace Abbey_Trading_Store.UI
             }
             else
             {
-                MessageBox.Show("An error occcured.");
+                MessageBox.Show("An error occcurred.");
             }
             DataTable dt = user.search(search.Text);
             dataGridView1.DataSource = dt;

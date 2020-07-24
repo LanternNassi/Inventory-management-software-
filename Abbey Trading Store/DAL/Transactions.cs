@@ -18,6 +18,8 @@ namespace Abbey_Trading_Store.DAL
         private DateTime transaction_date;
         private int discount;
         private string added_by;
+        private int return_amount;
+        private int paid_amount;
 
         // properties
         public int id { get { return ID; } set { ID = value; } }
@@ -27,37 +29,35 @@ namespace Abbey_Trading_Store.DAL
         public DateTime Transaction_date { get { return transaction_date; } set { transaction_date = value; } }
         public int Discount { get { return discount; } set { discount = value; } }
         public string Added_by { get { return added_by; } set { added_by = value; } }
+        public int Return_amount { get { return return_amount; } set { return_amount = value; } }
+        public int Paid_amount { get { return paid_amount; } set { paid_amount = value; } }
 
 
         #region Insert Transactions
-        public bool Insert(out int TransactionID)
+        public int Insert()
         {
-            TransactionID = -1;
-            bool isSuccess = false;
+            //TransactionID = -1;
+            int transID = 0;
             const string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
             OleDbConnection conn = new OleDbConnection(connection);
-            string cmdstring = "INSERT INTO `Transactions`(`type`,`dea_cust_name`,`grandTotal`,`discount`,`added_by`)VALUES(@type,@dea_cust_name,@grandTotal,@discount,@added_by)";
+            string cmdstring = "INSERT INTO `Transactions`(`type`,`dea_cust_name`,`grandTotal`,`discount`,`added_by`,`Paid_amount`,`Return_amount`)VALUES(@type,@dea_cust_name,@grandTotal,@discount,@added_by,@Paid_amount,@Return_amount)";
+            string cmdstring2 = "SELECT @@Identity";
             try
             {
                 OleDbCommand cmd = new OleDbCommand(cmdstring, conn);
                 cmd.Parameters.AddWithValue("@type", type);
                 cmd.Parameters.AddWithValue("@dea_cust_name", dea_cust_name);
                 cmd.Parameters.AddWithValue("@grandTotal", grandTotal);
-                //cmd.Parameters.AddWithValue("@transaction_date", transaction_date);
                 cmd.Parameters.AddWithValue("@discount", discount);
                 cmd.Parameters.AddWithValue("@added_by", added_by);
+                cmd.Parameters.AddWithValue("@Paid_amount", paid_amount);
+                cmd.Parameters.AddWithValue("@Return_amount", return_amount);
                 conn.Open();
-                object o = cmd.ExecuteScalar();
-                if (o != null)
-                {
-                    isSuccess = true;
-                    TransactionID = int.Parse(o.ToString());
-                }
-                else
-                {
-                    isSuccess = false;
-                }
-
+                // Inserting the data into the database
+                cmd.ExecuteNonQuery();
+                //returning an id of the input data
+                cmd.CommandText = cmdstring2;
+                transID = (int)cmd.ExecuteScalar();
 
             }
             catch (Exception ex)
@@ -69,7 +69,7 @@ namespace Abbey_Trading_Store.DAL
             {
                 conn.Close();
             }
-            return isSuccess;
+            return transID;
         }
         #endregion
 

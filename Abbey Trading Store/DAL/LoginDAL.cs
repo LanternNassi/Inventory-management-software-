@@ -17,10 +17,24 @@ namespace Abbey_Trading_Store.DAL
         // properties
         public string Username { get { return username; } set { username = value; } }
         public string Password { get { return password; } set { password = value; } }
-        public string Usertype { get { return usertype; } set { usertype = value; } }
+        public string Usertype { get { return usertype; } set {
+            if (value == "admin")
+            {
+                usertype = value;
+            }
+            else if (value == "normal")
+            {
+                usertype = value;
+            }
+            else
+            {
+                usertype = "normal";
+            }
+        } }
 
-        public bool login()
+        public string[] login()
         {
+            string[] result = new string[2];
             bool isSuccess = false;
             const string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
             OleDbConnection conn = new OleDbConnection(connection);
@@ -34,9 +48,14 @@ namespace Abbey_Trading_Store.DAL
             DataTable dt = new DataTable();
             
             adapter.Fill(dt);
+            
             if (dt.Rows.Count > 0)
             {
+                string type;
+                type = dt.Rows[0][5].ToString();
                 isSuccess = true;
+                result[0] = isSuccess.ToString();
+                result[1] = type;
             }
             else
             {
@@ -46,7 +65,7 @@ namespace Abbey_Trading_Store.DAL
             conn.Close();
  
             
-            return isSuccess;
+            return result;
         }
     }
 }

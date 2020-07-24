@@ -17,3 +17,11 @@ C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Deb
 C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Debug\Abbey_Trading_Store.UI.frmPurchaseandsales.resources
 C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Debug\Abbey_Trading_Store.UI.frmTransactions.resources
 C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Debug\Abbey_Trading_Store.UI.Inventory.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\bin\x64\Debug\Abbey Trading Store.exe.manifest
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\bin\x64\Debug\Abbey Trading Store.application
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Debug\Abbey_Trading_Store.UI.Transaction_Details.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Debug\RdlCompile.cache
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Debug\RdlCompile.compiled
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Debug\Abbey Trading Store.TrustInfo.xml
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Debug\Abbey Trading Store.exe.manifest
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x64\Debug\Abbey Trading Store.application

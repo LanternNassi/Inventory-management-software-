@@ -141,6 +141,7 @@
             this.id.ForeColor = System.Drawing.Color.Red;
             this.id.Location = new System.Drawing.Point(147, 90);
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Size = new System.Drawing.Size(161, 25);
             this.id.TabIndex = 27;
             // 

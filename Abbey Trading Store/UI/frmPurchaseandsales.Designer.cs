@@ -63,6 +63,8 @@
             this.dgv_products = new System.Windows.Forms.DataGridView();
             this.label15 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.label16 = new System.Windows.Forms.Label();
             this.save = new System.Windows.Forms.Button();
             this.return_amount = new System.Windows.Forms.TextBox();
             this.paid_amount = new System.Windows.Forms.TextBox();
@@ -74,7 +76,8 @@
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.generate_invoice = new System.Windows.Forms.Button();
+            this.invoice_txtbx = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -415,7 +418,7 @@
             this.panel4.Controls.Add(this.label15);
             this.panel4.Location = new System.Drawing.Point(13, 289);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(589, 327);
+            this.panel4.Size = new System.Drawing.Size(589, 293);
             this.panel4.TabIndex = 25;
             // 
             // dgv_products
@@ -423,7 +426,7 @@
             this.dgv_products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_products.Location = new System.Drawing.Point(6, 32);
             this.dgv_products.Name = "dgv_products";
-            this.dgv_products.Size = new System.Drawing.Size(580, 292);
+            this.dgv_products.Size = new System.Drawing.Size(580, 257);
             this.dgv_products.TabIndex = 3;
             this.dgv_products.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgv_products_RowHeaderMouseClick);
             // 
@@ -439,29 +442,39 @@
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.save);
-            this.panel5.Controls.Add(this.return_amount);
-            this.panel5.Controls.Add(this.paid_amount);
-            this.panel5.Controls.Add(this.textBox13);
-            this.panel5.Controls.Add(this.grandtotal);
-            this.panel5.Controls.Add(this.subtotal);
-            this.panel5.Controls.Add(this.label21);
-            this.panel5.Controls.Add(this.label20);
-            this.panel5.Controls.Add(this.label19);
-            this.panel5.Controls.Add(this.label18);
-            this.panel5.Controls.Add(this.label17);
+            this.panel5.Controls.Add(this.invoice_txtbx);
+            this.panel5.Controls.Add(this.generate_invoice);
+            this.panel5.Controls.Add(this.reportViewer1);
             this.panel5.Controls.Add(this.label16);
-            this.panel5.Location = new System.Drawing.Point(618, 289);
+            this.panel5.Location = new System.Drawing.Point(618, 276);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(544, 324);
+            this.panel5.Size = new System.Drawing.Size(544, 384);
             this.panel5.TabIndex = 26;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Abbey_Trading_Store.Invoice.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(6, 41);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(535, 343);
+            this.reportViewer1.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(3, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(113, 17);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Invoice Overview";
             // 
             // save
             // 
             this.save.BackColor = System.Drawing.Color.Fuchsia;
             this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save.Location = new System.Drawing.Point(192, 280);
+            this.save.Location = new System.Drawing.Point(197, 733);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(192, 35);
             this.save.TabIndex = 17;
@@ -472,7 +485,7 @@
             // return_amount
             // 
             this.return_amount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.return_amount.Location = new System.Drawing.Point(141, 235);
+            this.return_amount.Location = new System.Drawing.Point(744, 710);
             this.return_amount.Name = "return_amount";
             this.return_amount.ReadOnly = true;
             this.return_amount.Size = new System.Drawing.Size(305, 39);
@@ -482,7 +495,7 @@
             // 
             this.paid_amount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.paid_amount.ForeColor = System.Drawing.Color.Red;
-            this.paid_amount.Location = new System.Drawing.Point(141, 181);
+            this.paid_amount.Location = new System.Drawing.Point(147, 677);
             this.paid_amount.Name = "paid_amount";
             this.paid_amount.Size = new System.Drawing.Size(305, 27);
             this.paid_amount.TabIndex = 15;
@@ -492,7 +505,7 @@
             // 
             this.textBox13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox13.ForeColor = System.Drawing.Color.Red;
-            this.textBox13.Location = new System.Drawing.Point(141, 80);
+            this.textBox13.Location = new System.Drawing.Point(147, 633);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(305, 27);
             this.textBox13.TabIndex = 14;
@@ -501,7 +514,7 @@
             // grandtotal
             // 
             this.grandtotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grandtotal.Location = new System.Drawing.Point(141, 131);
+            this.grandtotal.Location = new System.Drawing.Point(744, 666);
             this.grandtotal.Name = "grandtotal";
             this.grandtotal.Size = new System.Drawing.Size(305, 29);
             this.grandtotal.TabIndex = 13;
@@ -510,7 +523,7 @@
             // 
             this.subtotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtotal.ForeColor = System.Drawing.Color.Red;
-            this.subtotal.Location = new System.Drawing.Point(141, 32);
+            this.subtotal.Location = new System.Drawing.Point(147, 592);
             this.subtotal.Name = "subtotal";
             this.subtotal.ReadOnly = true;
             this.subtotal.Size = new System.Drawing.Size(305, 27);
@@ -521,7 +534,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(11, 238);
+            this.label21.Location = new System.Drawing.Point(614, 713);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(95, 17);
             this.label21.TabIndex = 11;
@@ -531,7 +544,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(11, 32);
+            this.label20.Location = new System.Drawing.Point(17, 592);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(63, 17);
             this.label20.TabIndex = 10;
@@ -541,7 +554,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(11, 80);
+            this.label19.Location = new System.Drawing.Point(17, 633);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(58, 17);
             this.label19.TabIndex = 9;
@@ -551,7 +564,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(11, 131);
+            this.label18.Location = new System.Drawing.Point(614, 666);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(77, 17);
             this.label18.TabIndex = 8;
@@ -561,33 +574,56 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(11, 184);
+            this.label17.Location = new System.Drawing.Point(17, 680);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(82, 17);
             this.label17.TabIndex = 7;
             this.label17.Text = "Paid Amount";
             // 
-            // label16
+            // generate_invoice
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(3, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(83, 17);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "Calculations";
+            this.generate_invoice.BackColor = System.Drawing.Color.Fuchsia;
+            this.generate_invoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.generate_invoice.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generate_invoice.Location = new System.Drawing.Point(272, 8);
+            this.generate_invoice.Name = "generate_invoice";
+            this.generate_invoice.Size = new System.Drawing.Size(131, 27);
+            this.generate_invoice.TabIndex = 27;
+            this.generate_invoice.Text = "Generate Invoice";
+            this.generate_invoice.UseVisualStyleBackColor = false;
+            this.generate_invoice.Click += new System.EventHandler(this.generate_invoice_Click);
+            // 
+            // invoice_txtbx
+            // 
+            this.invoice_txtbx.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.invoice_txtbx.ForeColor = System.Drawing.Color.Red;
+            this.invoice_txtbx.Location = new System.Drawing.Point(409, 8);
+            this.invoice_txtbx.Name = "invoice_txtbx";
+            this.invoice_txtbx.Size = new System.Drawing.Size(131, 27);
+            this.invoice_txtbx.TabIndex = 17;
             // 
             // frmPurchaseandsales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1174, 628);
+            this.ClientSize = new System.Drawing.Size(1174, 779);
+            this.Controls.Add(this.save);
             this.Controls.Add(this.panel5);
+            this.Controls.Add(this.return_amount);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.panel4);
+            this.Controls.Add(this.paid_amount);
             this.Controls.Add(this.panel3);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.grandtotal);
+            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.label18);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.subtotal);
+            this.Controls.Add(this.label20);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPurchaseandsales";
@@ -606,6 +642,7 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -657,5 +694,8 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button save;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.TextBox invoice_txtbx;
+        private System.Windows.Forms.Button generate_invoice;
     }
 }

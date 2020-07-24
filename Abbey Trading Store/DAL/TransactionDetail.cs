@@ -20,6 +20,7 @@ namespace Abbey_Trading_Store.DAL
         private string dea_cust_name;
         private DateTime added_date;
         private string added_by;
+        private int Invoice_id;
 
         //Properties
         public int id { get { return ID;} set {ID = value;} }
@@ -30,6 +31,7 @@ namespace Abbey_Trading_Store.DAL
         public string Dea_Cust_name { get { return dea_cust_name; } set { dea_cust_name = value; } }
         public DateTime Added_date { get { return added_date; } set { added_date = value;} }
         public string Added_by { get { return added_by; } set { added_by = value; } }
+        public int invoice_id {get{return Invoice_id;}set{Invoice_id = value;}}
 
 #region Insert Transaction Details
         public bool Insert()
@@ -37,7 +39,7 @@ namespace Abbey_Trading_Store.DAL
             bool isSuccess = false;
             const string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
             OleDbConnection conn = new OleDbConnection(connection);
-            string cmdstring = "INSERT INTO `Transaction Details`(`product_name`,`rate`,`Qty`,`total`,`dea_cust_name`,`added_by`)VALUES(@product_name,@rate,@Qty,@total,@dea_cust_name,@added_by)";
+            string cmdstring = "INSERT INTO `Transaction Details`(`product_name`,`rate`,`Qty`,`total`,`dea_cust_name`,`added_by`,`Invoice_id`)VALUES(@product_name,@rate,@Qty,@total,@dea_cust_name,@added_by,@Invoice_id)";
 
 
             try
@@ -49,8 +51,8 @@ namespace Abbey_Trading_Store.DAL
                 cmd.Parameters.AddWithValue("@Qty", Qty);
                 cmd.Parameters.AddWithValue("@total", total);
                 cmd.Parameters.AddWithValue("@dea_cust_name", dea_cust_name);
-                //cmd.Parameters.AddWithValue("@added_date", added_date);
                 cmd.Parameters.AddWithValue("@added_by", added_by);
+                cmd.Parameters.AddWithValue("@Invoice_id", Invoice_id);
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
                 if (rows > 0)

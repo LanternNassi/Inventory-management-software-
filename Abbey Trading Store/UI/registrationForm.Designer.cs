@@ -38,9 +38,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.name = new System.Windows.Forms.TextBox();
-            this.gender = new System.Windows.Forms.TextBox();
             this.added_by = new System.Windows.Forms.TextBox();
-            this.type = new System.Windows.Forms.TextBox();
             this.password = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
@@ -49,6 +47,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.search = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.type_cmbx = new System.Windows.Forms.ComboBox();
+            this.gender_cmbx = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -142,32 +142,15 @@
             this.name.Size = new System.Drawing.Size(141, 25);
             this.name.TabIndex = 8;
             // 
-            // gender
-            // 
-            this.gender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gender.ForeColor = System.Drawing.Color.Red;
-            this.gender.Location = new System.Drawing.Point(113, 239);
-            this.gender.Name = "gender";
-            this.gender.Size = new System.Drawing.Size(141, 25);
-            this.gender.TabIndex = 9;
-            // 
             // added_by
             // 
             this.added_by.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.added_by.ForeColor = System.Drawing.Color.Red;
             this.added_by.Location = new System.Drawing.Point(113, 294);
             this.added_by.Name = "added_by";
+            this.added_by.ReadOnly = true;
             this.added_by.Size = new System.Drawing.Size(141, 25);
             this.added_by.TabIndex = 10;
-            // 
-            // type
-            // 
-            this.type.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.type.ForeColor = System.Drawing.Color.Red;
-            this.type.Location = new System.Drawing.Point(113, 346);
-            this.type.Name = "type";
-            this.type.Size = new System.Drawing.Size(141, 25);
-            this.type.TabIndex = 11;
             // 
             // password
             // 
@@ -259,12 +242,38 @@
             this.panel1.Size = new System.Drawing.Size(593, 46);
             this.panel1.TabIndex = 19;
             // 
+            // type_cmbx
+            // 
+            this.type_cmbx.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.type_cmbx.FormattingEnabled = true;
+            this.type_cmbx.Items.AddRange(new object[] {
+            "normal",
+            "admin"});
+            this.type_cmbx.Location = new System.Drawing.Point(113, 343);
+            this.type_cmbx.Name = "type_cmbx";
+            this.type_cmbx.Size = new System.Drawing.Size(141, 23);
+            this.type_cmbx.TabIndex = 20;
+            // 
+            // gender_cmbx
+            // 
+            this.gender_cmbx.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gender_cmbx.FormattingEnabled = true;
+            this.gender_cmbx.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.gender_cmbx.Location = new System.Drawing.Point(113, 240);
+            this.gender_cmbx.Name = "gender_cmbx";
+            this.gender_cmbx.Size = new System.Drawing.Size(141, 23);
+            this.gender_cmbx.TabIndex = 21;
+            // 
             // registrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(593, 466);
+            this.Controls.Add(this.gender_cmbx);
+            this.Controls.Add(this.type_cmbx);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.search);
             this.Controls.Add(this.label8);
@@ -273,9 +282,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.password);
-            this.Controls.Add(this.type);
             this.Controls.Add(this.added_by);
-            this.Controls.Add(this.gender);
             this.Controls.Add(this.name);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -307,9 +314,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox name;
-        private System.Windows.Forms.TextBox gender;
         private System.Windows.Forms.TextBox added_by;
-        private System.Windows.Forms.TextBox type;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
@@ -318,5 +323,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox type_cmbx;
+        private System.Windows.Forms.ComboBox gender_cmbx;
     }
 }

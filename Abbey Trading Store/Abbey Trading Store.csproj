@@ -103,9 +103,12 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -116,7 +119,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abbey_Trading_StoreDataSet.cs">
+      <DependentUpon>Abbey_Trading_StoreDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Abbey_Trading_StoreDataSet.Designer.cs">
+      <DependentUpon>Abbey_Trading_StoreDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Invoice\Abbey_Trading_StoreDataSet.cs">
+      <DependentUpon>Abbey_Trading_StoreDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Invoice\Abbey_Trading_StoreDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Abbey_Trading_StoreDataSet.xsd</DependentUpon>
@@ -130,6 +146,11 @@
     <Compile Include="DAL\Transactions.cs" />
     <Compile Include="DAL\Users.cs">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Invoice\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="UI\Form1.cs">
       <SubType>Form</SubType>
@@ -205,6 +226,7 @@
     <Compile Include="UI\Transaction Details.Designer.cs">
       <DependentUpon>Transaction Details.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Invoice\Report1.rdlc" />
     <EmbeddedResource Include="UI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -263,8 +285,34 @@
     <None Include="Abbey_Trading_StoreDataSet.xss">
       <DependentUpon>Abbey_Trading_StoreDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Invoice\Abbey_Trading_StoreDataSet.xsc">
+      <DependentUpon>Abbey_Trading_StoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Invoice\Abbey_Trading_StoreDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Abbey_Trading_StoreDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Invoice\Abbey_Trading_StoreDataSet.xss">
+      <DependentUpon>Abbey_Trading_StoreDataSet.xsd</DependentUpon>
+    </None>
     <None Include="app.config" />
+    <None Include="Invoice\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="Invoice\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Invoice\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\Abbey_Trading_Store.Invoice.Abbey_Trading_StoreDataSet+DataTable_Details2DataTable.datasource" />
+    <None Include="Properties\DataSources\Abbey_Trading_Store.Invoice.Abbey_Trading_StoreDataSet+DataTable_DetailsDataTable.datasource" />
+    <None Include="Properties\DataSources\Abbey_Trading_Store.Invoice.Abbey_Trading_StoreDataSet+Datatable_invoiceDataTable.datasource" />
+    <None Include="Properties\DataSources\Abbey_Trading_Store.Invoice.Abbey_Trading_StoreDataSet.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

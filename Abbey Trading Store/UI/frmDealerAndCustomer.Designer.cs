@@ -93,9 +93,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 21);
+            this.label2.Size = new System.Drawing.Size(25, 21);
             this.label2.TabIndex = 23;
-            this.label2.Text = "DeaCust";
+            this.label2.Text = "ID";
             // 
             // label3
             // 
@@ -153,6 +153,7 @@
             this.id.ForeColor = System.Drawing.Color.Red;
             this.id.Location = new System.Drawing.Point(108, 70);
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Size = new System.Drawing.Size(174, 23);
             this.id.TabIndex = 31;
             // 

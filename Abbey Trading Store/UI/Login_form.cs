@@ -36,14 +36,15 @@ namespace Abbey_Trading_Store.UI
             LoginDAL Login = new LoginDAL();
             Login.Username = username.Text;
             Login.Password = password.Text;
-            Login.Usertype = usertype.Text;
-            bool isSuccess = Login.login();
-            if (isSuccess == true)
+            Login.Usertype = usertype_cmbx.Text;
+            string[] results = Login.login();
+            string admin_priviledge = usertype_cmbx.Text;
+            if (results[0] == "True")
             {
                 //MessageBox.Show("Login successful");
                 user = Login.Username;
                 //Open Respective dashboard
-                switch (Login.Usertype)
+                switch (results[1])
                 {
                     case "admin":
                         {
@@ -53,21 +54,40 @@ namespace Abbey_Trading_Store.UI
                             ss.Update();
                             System.Threading.Thread.Sleep(10000);
                             ss.Close();
-                            Admin_dashboard admin = new Admin_dashboard();
-                            admin.Show();
+                            if (admin_priviledge == "admin")
+                            {
+                                Admin_dashboard admin = new Admin_dashboard();
+                                admin.Show();
+                            }
+                            else if (admin_priviledge == "normal")
+                            {
+                                frmUserDashboard normal = new frmUserDashboard();
+                                normal.Show();
+                            }
+                               
             
                         }
                         break;
                     case "normal":
                         {
-                            this.Hide();
-                            Splashscreen ss = new Splashscreen();
-                            ss.Show();
-                            ss.Update();
-                            System.Threading.Thread.Sleep(10000);
-                            ss.Close();
-                            frmUserDashboard normal = new frmUserDashboard();
-                            normal.Show();     
+                            if (admin_priviledge == "admin")
+                            {
+                                MessageBox.Show("You are trying to access an admin panel without administration rights.Please consider informing your administrator for more information");
+                                this.Close();
+                            }
+                            else if (admin_priviledge == "normal")
+                            {
+                                this.Hide();
+                                Splashscreen ss = new Splashscreen();
+                                ss.Show();
+                                ss.Update();
+                                System.Threading.Thread.Sleep(10000);
+                                ss.Close();
+                                frmUserDashboard normal = new frmUserDashboard();
+                                normal.Show(); 
+
+                            }
+                                
 
                         }
                         break;
