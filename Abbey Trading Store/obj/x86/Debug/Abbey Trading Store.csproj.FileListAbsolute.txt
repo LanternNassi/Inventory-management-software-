@@ -1,0 +1,25 @@
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\bin\Debug\Abbey Trading Store.exe
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\bin\Debug\Abbey Trading Store.pdb
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.Properties.Resources.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey Trading Store.csproj.GenerateResource.Cache
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey Trading Store.exe
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey Trading Store.pdb
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\bin\Debug\Abbey Trading Store.exe.config
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey Trading Store.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\bin\Debug\DAL\Users.cs
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.Admin_dashboard.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.frmUserDashboard.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.registrationForm.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.Login_form.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.frmCategory.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.frmProducts.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.frmDealerAndCustomer.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.Splashscreen.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.frmPurchaseandsales.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.frmTransactions.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey_Trading_Store.UI.Inventory.resources
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey Trading Store.TrustInfo.xml
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey Trading Store.exe.manifest
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\bin\Debug\Abbey Trading Store.exe.manifest
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\bin\Debug\Abbey Trading Store.application
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Debug\Abbey Trading Store.application
