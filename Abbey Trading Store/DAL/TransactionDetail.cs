@@ -76,6 +76,42 @@ namespace Abbey_Trading_Store.DAL
         }
 #endregion
 
+        #region Getting transaction Details
+       
+
+        #region Returning all transaction details
+        public DataTable GetAllTransactionDetails(string Name)
+        {
+            DataTable dt = new DataTable();
+            const string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
+            OleDbConnection conn = new OleDbConnection(connection);
+            string cmdstring = "SELECT product_name,rate,Qty,Total,dea_cust_name,added_date,added_by FROM `Transaction Details` WHERE `dea_cust_name` = @dea_cust_name";
+            try
+            {
+                OleDbCommand cmd = new OleDbCommand(cmdstring, conn);
+                cmd.Parameters.AddWithValue("@dea_cust_name", Name);
+                
+                OleDbDataAdapter adapter = new OleDbDataAdapter() { SelectCommand = cmd };
+                conn.Open();
+                adapter.Fill(dt);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return dt;
+        }
+        #endregion
+        #endregion
+
+
+
 
 
     }

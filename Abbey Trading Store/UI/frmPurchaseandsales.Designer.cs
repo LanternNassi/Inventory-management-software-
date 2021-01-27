@@ -99,7 +99,7 @@
             this.Types.AutoSize = true;
             this.Types.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Types.ForeColor = System.Drawing.Color.White;
-            this.Types.Location = new System.Drawing.Point(472, 9);
+            this.Types.Location = new System.Drawing.Point(510, 9);
             this.Types.Name = "Types";
             this.Types.Size = new System.Drawing.Size(242, 30);
             this.Types.TabIndex = 0;
@@ -260,9 +260,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(0, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(185, 17);
+            this.label2.Size = new System.Drawing.Size(175, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Dealer and Customer Details";
+            this.label2.Text = "Dealer or Customer Details";
             // 
             // panel3
             // 
@@ -458,7 +458,7 @@
             // 
             // save
             // 
-            this.save.BackColor = System.Drawing.Color.Red;
+            this.save.BackColor = System.Drawing.Color.Fuchsia;
             this.save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.save.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save.Location = new System.Drawing.Point(192, 280);
@@ -573,9 +573,9 @@
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(3, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(106, 17);
+            this.label16.Size = new System.Drawing.Size(83, 17);
             this.label16.TabIndex = 3;
-            this.label16.Text = "Added Products";
+            this.label16.Text = "Calculations";
             // 
             // frmPurchaseandsales
             // 

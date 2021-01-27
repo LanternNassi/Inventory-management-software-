@@ -221,7 +221,7 @@ namespace Abbey_Trading_Store.DAL
                 conn.Open();
                 adapter.Fill(dt);
                 if(dt.Rows.Count >0){
-                    // Filling in the values into the array for returning
+                     //Filling in the values into the array for returning
                     results[0] = dt.Rows[0]["Name"].ToString();
                     results[1] = dt.Rows[0]["Email"].ToString();
                     results[2] = dt.Rows[0]["Contact"].ToString();

@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Abbey Trading Store.exe" size="6835712">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Abbey Trading Store.exe" size="6844416">
       <assemblyIdentity name="Abbey Trading Store" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>AMl8J5eWlGKmMF/y3N5c3g+V8+Y=</dsig:DigestValue>
+        <dsig:DigestValue>/aHiA8YtPyolJXKdCtmVJ9GKHk0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

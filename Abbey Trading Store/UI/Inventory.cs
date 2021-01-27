@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms;
 using Abbey_Trading_Store.DAL;
+using DGVPrinterHelper;
 
 
 namespace Abbey_Trading_Store.UI
@@ -53,6 +54,21 @@ namespace Abbey_Trading_Store.UI
             DataTable dt = product.select();
             dgv_Inventory.DataSource = dt;
 
+        }
+
+        private void Show_all_Click(object sender, EventArgs e)
+        {
+            DGVPrinter Printer = new DGVPrinter();
+            Printer.Title = "\r\n\r\n\r\n ABBEY TRADING STORE \r\n\r\n";
+            Printer.SubTitle = "Masaka Buddu Street \r\n Phone: 0758989094\r\n\r\n";
+            Printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            Printer.PageNumbers = true;
+            Printer.PageNumberInHeader = false;
+            Printer.PorportionalColumns = false;
+            Printer.HeaderCellAlignment = StringAlignment.Near;
+            Printer.Footer = "\r\n\r\n Report for All Inventory";
+            Printer.FooterSpacing = 15;
+            Printer.PrintDataGridView(dgv_Inventory);
         }
     }
 }

@@ -58,7 +58,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(592, 46);
+            this.panel1.Size = new System.Drawing.Size(711, 46);
             this.panel1.TabIndex = 20;
             // 
             // label1
@@ -66,16 +66,17 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(223, 12);
+            this.label1.Location = new System.Drawing.Point(278, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Categories";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(515, 12);
+            this.button1.Location = new System.Drawing.Point(633, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 34);
             this.button1.TabIndex = 1;
@@ -87,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 92);
+            this.label2.Location = new System.Drawing.Point(12, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 21);
             this.label2.TabIndex = 21;
@@ -97,7 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 129);
+            this.label3.Location = new System.Drawing.Point(12, 167);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 21);
             this.label3.TabIndex = 22;
@@ -107,7 +108,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 174);
+            this.label4.Location = new System.Drawing.Point(12, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 21);
             this.label4.TabIndex = 23;
@@ -116,7 +117,7 @@
             // id
             // 
             this.id.ForeColor = System.Drawing.Color.Red;
-            this.id.Location = new System.Drawing.Point(133, 92);
+            this.id.Location = new System.Drawing.Point(133, 130);
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Size = new System.Drawing.Size(178, 20);
@@ -126,7 +127,7 @@
             // 
             this.description.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.description.ForeColor = System.Drawing.Color.Red;
-            this.description.Location = new System.Drawing.Point(133, 174);
+            this.description.Location = new System.Drawing.Point(133, 212);
             this.description.Multiline = true;
             this.description.Name = "description";
             this.description.Size = new System.Drawing.Size(178, 95);
@@ -136,7 +137,7 @@
             // 
             this.title.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.Red;
-            this.title.Location = new System.Drawing.Point(133, 132);
+            this.title.Location = new System.Drawing.Point(133, 170);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(178, 25);
             this.title.TabIndex = 26;
@@ -146,7 +147,7 @@
             this.button2.BackColor = System.Drawing.Color.ForestGreen;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(144, 322);
+            this.button2.Location = new System.Drawing.Point(144, 340);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(97, 35);
             this.button2.TabIndex = 27;
@@ -159,7 +160,7 @@
             this.button3.BackColor = System.Drawing.Color.Red;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(375, 322);
+            this.button3.Location = new System.Drawing.Point(455, 340);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(97, 35);
             this.button3.TabIndex = 28;
@@ -172,7 +173,7 @@
             this.button4.BackColor = System.Drawing.Color.Lime;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button4.ForeColor = System.Drawing.Color.Black;
-            this.button4.Location = new System.Drawing.Point(259, 322);
+            this.button4.Location = new System.Drawing.Point(297, 340);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 35);
             this.button4.TabIndex = 29;
@@ -190,7 +191,7 @@
             this.categoriesDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.categoriesDGV.Location = new System.Drawing.Point(327, 132);
             this.categoriesDGV.Name = "categoriesDGV";
-            this.categoriesDGV.Size = new System.Drawing.Size(253, 150);
+            this.categoriesDGV.Size = new System.Drawing.Size(384, 175);
             this.categoriesDGV.TabIndex = 30;
             this.categoriesDGV.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.categoriesDGV_RowHeaderMouseClick);
             // 
@@ -198,7 +199,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(323, 89);
+            this.label5.Location = new System.Drawing.Point(407, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 21);
             this.label5.TabIndex = 31;
@@ -208,9 +209,9 @@
             // 
             this.search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.ForeColor = System.Drawing.Color.Red;
-            this.search.Location = new System.Drawing.Point(386, 92);
+            this.search.Location = new System.Drawing.Point(470, 91);
             this.search.Name = "search";
-            this.search.Size = new System.Drawing.Size(194, 22);
+            this.search.Size = new System.Drawing.Size(229, 22);
             this.search.TabIndex = 32;
             this.search.TextChanged += new System.EventHandler(this.search_TextChanged);
             // 
@@ -219,7 +220,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(592, 387);
+            this.ClientSize = new System.Drawing.Size(711, 387);
             this.Controls.Add(this.search);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.categoriesDGV);

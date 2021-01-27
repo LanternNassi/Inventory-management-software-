@@ -49,7 +49,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.search = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -130,9 +129,9 @@
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(12, 179);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(79, 25);
+            this.label7.Size = new System.Drawing.Size(92, 25);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Contact";
+            this.label7.Text = "Password";
             // 
             // name
             // 
@@ -260,24 +259,12 @@
             this.panel1.Size = new System.Drawing.Size(593, 46);
             this.panel1.TabIndex = 19;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Yellow;
-            this.label9.Location = new System.Drawing.Point(12, 76);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(257, 37);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Abbey Trading store";
-            // 
             // registrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(593, 466);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.search);
             this.Controls.Add(this.label8);
@@ -331,6 +318,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox search;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label9;
     }
 }

@@ -36,6 +36,7 @@
             this.Category_combobox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgv_Inventory = new System.Windows.Forms.DataGridView();
+            this.Show_all = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Inventory)).BeginInit();
             this.SuspendLayout();
@@ -118,12 +119,26 @@
             this.dgv_Inventory.Size = new System.Drawing.Size(746, 306);
             this.dgv_Inventory.TabIndex = 31;
             // 
+            // Show_all
+            // 
+            this.Show_all.BackColor = System.Drawing.Color.Turquoise;
+            this.Show_all.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Show_all.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Show_all.Location = new System.Drawing.Point(608, 56);
+            this.Show_all.Name = "Show_all";
+            this.Show_all.Size = new System.Drawing.Size(119, 41);
+            this.Show_all.TabIndex = 32;
+            this.Show_all.Text = "PRINT ALL";
+            this.Show_all.UseVisualStyleBackColor = false;
+            this.Show_all.Click += new System.EventHandler(this.Show_all_Click);
+            // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(771, 423);
+            this.Controls.Add(this.Show_all);
             this.Controls.Add(this.dgv_Inventory);
             this.Controls.Add(this.Show_all_inventory);
             this.Controls.Add(this.panel1);
@@ -152,5 +167,6 @@
         private System.Windows.Forms.ComboBox Category_combobox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgv_Inventory;
+        private System.Windows.Forms.Button Show_all;
     }
 }
