@@ -35,14 +35,14 @@ namespace Abbey_Trading_Store.UI
             flexible = dt;
             dgv_transactions.DataSource = dt;
             int total_holder = 0;
-            int discount_holder = 0;
+            int profit_holder = 0;
             for (int i = 0; (i <= flexible.Rows.Count - 1); i++)
             {
                 total_holder += int.Parse(flexible.Rows[i][3].ToString());
-                discount_holder += int.Parse(flexible.Rows[i][5].ToString());
+                profit_holder += int.Parse(flexible.Rows[i][9].ToString());
             }
             txtbx_total.Text = "Shs. "+ total_holder.ToString("N0");
-            txtbx_discounts.Text = "Shs. "+ discount_holder.ToString("N0");
+            txtbx_discounts.Text = "Shs. "+ profit_holder.ToString("N0");
 
 
         }
@@ -68,6 +68,9 @@ namespace Abbey_Trading_Store.UI
             holder.Columns.Add("transaction_date");
             holder.Columns.Add("discount");
             holder.Columns.Add("added_by");
+            holder.Columns.Add("Paid_amount");
+            holder.Columns.Add("Return_amount");
+            holder.Columns.Add("Profit");
             for (int i = 0; i <= (flexible.Rows.Count - 1); i++)
             {
 
@@ -81,9 +84,13 @@ namespace Abbey_Trading_Store.UI
                     string date_time = flexible.Rows[i][4].ToString();
                     string discount = flexible.Rows[i][5].ToString();
                     string added_by = flexible.Rows[i][6].ToString();
+                    string paid_amount = flexible.Rows[i][7].ToString();
+                    string return_amount = flexible.Rows[i][8].ToString();
+                    string profit = flexible.Rows[i][9].ToString();
+
 
                     // Add the data to the holder data table
-                    holder.Rows.Add(id, types, name, grandTotal, date_time, discount, added_by);
+                    holder.Rows.Add(id, types, name, grandTotal, date_time, discount, added_by,paid_amount,return_amount,profit);
 
                 }
                 else
@@ -99,7 +106,7 @@ namespace Abbey_Trading_Store.UI
             for (int i = 0; (i <= flexible.Rows.Count - 1); i++)
             {
                 total_holder += int.Parse(flexible.Rows[i][3].ToString());
-                discount_holder += int.Parse(flexible.Rows[i][5].ToString());
+                discount_holder += int.Parse(flexible.Rows[i][9].ToString());
             }
             txtbx_total.Text = "Shs. " + total_holder.ToString("N0");
             txtbx_discounts.Text = "Shs. " + discount_holder.ToString("N0");
@@ -111,14 +118,14 @@ namespace Abbey_Trading_Store.UI
             flexible = dt_showAll;
             dgv_transactions.DataSource = flexible;
             int total_holder = 0;
-            int discount_holder = 0;
+            int profit_holder = 0;
             for (int i = 0; (i <= flexible.Rows.Count - 1); i++)
             {
                 total_holder += int.Parse(flexible.Rows[i][3].ToString());
-                discount_holder += int.Parse(flexible.Rows[i][5].ToString());
+                profit_holder += int.Parse(flexible.Rows[i][9].ToString());
             }
             txtbx_total.Text = "Shs. " + total_holder.ToString("N0");
-            txtbx_discounts.Text = "Shs. " + discount_holder.ToString("N0");
+            txtbx_discounts.Text = "Shs. " + profit_holder.ToString("N0");
             Cateory_combobox.Text = "";
             checkBox1.Checked = false;
         }
@@ -181,6 +188,9 @@ namespace Abbey_Trading_Store.UI
                 holder.Columns.Add("transaction_date");
                 holder.Columns.Add("discount");
                 holder.Columns.Add("added_by");
+                holder.Columns.Add("Paid_amount");
+                holder.Columns.Add("Return_amount");
+                holder.Columns.Add("Profits");
                 for (int i = 0; i <= (flexible.Rows.Count - 1); i++)
                 {
                     DateTime data_date = DateTime.Parse(flexible.Rows[i][4].ToString());
@@ -194,9 +204,12 @@ namespace Abbey_Trading_Store.UI
                         string date_time = flexible.Rows[i][4].ToString();
                         string discount = flexible.Rows[i][5].ToString();
                         string added_by = flexible.Rows[i][6].ToString();
+                        string paid_amount = flexible.Rows[i][7].ToString();
+                        string return_amount = flexible.Rows[i][8].ToString();
+                        string profits = flexible.Rows[i][9].ToString();
 
                         // Add the data to the holder data table
-                        holder.Rows.Add(id, type, name, grandTotal, date_time, discount, added_by);
+                        holder.Rows.Add(id, type, name, grandTotal, date_time, discount, added_by,paid_amount,return_amount,profits);
 
                     }
                     else
@@ -213,7 +226,7 @@ namespace Abbey_Trading_Store.UI
                     for (int i = 0; (i <= flexible.Rows.Count - 1); i++)
                     {
                         total_holder += int.Parse(flexible.Rows[i][3].ToString());
-                        discount_holder += int.Parse(flexible.Rows[i][5].ToString());
+                        discount_holder += int.Parse(flexible.Rows[i][9].ToString());
                     }
                     txtbx_total.Text = "Shs. " + total_holder.ToString("N0");
                     txtbx_discounts.Text = "Shs. " + discount_holder.ToString("N0");

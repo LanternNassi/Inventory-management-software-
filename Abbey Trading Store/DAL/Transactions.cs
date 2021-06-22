@@ -20,6 +20,7 @@ namespace Abbey_Trading_Store.DAL
         private string added_by;
         private int return_amount;
         private int paid_amount;
+        private int total_profit;
 
         // properties
         public int id { get { return ID; } set { ID = value; } }
@@ -31,6 +32,7 @@ namespace Abbey_Trading_Store.DAL
         public string Added_by { get { return added_by; } set { added_by = value; } }
         public int Return_amount { get { return return_amount; } set { return_amount = value; } }
         public int Paid_amount { get { return paid_amount; } set { paid_amount = value; } }
+        public int Total_Profit { get { return total_profit; } set { total_profit = value; } }
 
 
         #region Insert Transactions
@@ -40,7 +42,7 @@ namespace Abbey_Trading_Store.DAL
             int transID = 0;
             const string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
             OleDbConnection conn = new OleDbConnection(connection);
-            string cmdstring = "INSERT INTO `Transactions`(`type`,`dea_cust_name`,`grandTotal`,`discount`,`added_by`,`Paid_amount`,`Return_amount`)VALUES(@type,@dea_cust_name,@grandTotal,@discount,@added_by,@Paid_amount,@Return_amount)";
+            string cmdstring = "INSERT INTO `Transactions`(`type`,`dea_cust_name`,`grandTotal`,`discount`,`added_by`,`Paid_amount`,`Return_amount`,`Total_Profit`)VALUES(@type,@dea_cust_name,@grandTotal,@discount,@added_by,@Paid_amount,@Return_amount,@Total_Profit)";
             string cmdstring2 = "SELECT @@Identity";
             try
             {
@@ -52,6 +54,7 @@ namespace Abbey_Trading_Store.DAL
                 cmd.Parameters.AddWithValue("@added_by", added_by);
                 cmd.Parameters.AddWithValue("@Paid_amount", paid_amount);
                 cmd.Parameters.AddWithValue("@Return_amount", return_amount);
+                cmd.Parameters.AddWithValue("@Total_Profit", total_profit);
                 conn.Open();
                 // Inserting the data into the database
                 cmd.ExecuteNonQuery();

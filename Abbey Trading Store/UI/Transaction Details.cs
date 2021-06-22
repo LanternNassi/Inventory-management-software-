@@ -44,6 +44,7 @@ namespace Abbey_Trading_Store.UI
             dts.Columns.Add("dea_cust_name");
             dts.Columns.Add("added_date");
             dts.Columns.Add("added_by");
+            dts.Columns.Add("Profit");
             for (int i = 0; i <= (dt.Rows.Count-1); i++)
             {
                 //Getting the date from the data row clicked by the user
@@ -65,9 +66,10 @@ namespace Abbey_Trading_Store.UI
                     string dea_cust_name = dt.Rows[i][4].ToString();
                     string added_date = dt.Rows[i][5].ToString();
                     string added_by = dt.Rows[i][6].ToString();
+                    string profit = dt.Rows[i][7].ToString();
 
                     //Adding the row filtered to the data table for display
-                    dts.Rows.Add(p_name, rate, Qty, Total, dea_cust_name, added_date, added_by);
+                    dts.Rows.Add(p_name, rate, Qty, Total, dea_cust_name, added_date, added_by,profit);
                 }
                 else
                 {

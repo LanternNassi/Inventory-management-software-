@@ -23,6 +23,6 @@ C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Rel
 C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Release\Abbey Trading Store.exe.manifest
 C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Release\Abbey Trading Store.application
 C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Release\Abbey_Trading_Store.UI.Transaction_Details.resources
-C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Release\Abbey Trading Store.csprojResolveAssemblyReference.cache
 C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Release\RdlCompile.cache
 C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Release\RdlCompile.compiled
+C:\Users\admin\Desktop\abbey\Abbey Trading Store\Abbey Trading Store\obj\x86\Release\Abbey Trading Store.csprojResolveAssemblyReference.cache

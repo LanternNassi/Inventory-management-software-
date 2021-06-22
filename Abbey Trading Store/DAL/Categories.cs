@@ -54,14 +54,13 @@ namespace Abbey_Trading_Store.DAL
             const string conns = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
             bool isSuccess = false;
             OleDbConnection conn = new OleDbConnection(conns);
-            const string a = "Nassim";
             try
             {
                 const string cmds = "INSERT INTO Categories(`title`,`description`,`added_by`)VALUES(@title,@description,@added_by)";
                 OleDbCommand cmd = new OleDbCommand(cmds, conn);
                 cmd.Parameters.AddWithValue("@title", title);
                 cmd.Parameters.AddWithValue("@description", description);
-                cmd.Parameters.AddWithValue("added_by", a);
+                cmd.Parameters.AddWithValue("added_by", added_by);
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
                 if (rows > 0)

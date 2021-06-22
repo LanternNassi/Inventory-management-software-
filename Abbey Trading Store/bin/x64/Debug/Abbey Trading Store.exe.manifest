@@ -63,14 +63,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Abbey Trading Store.exe" size="6916608">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Abbey Trading Store.exe" size="6917632">
       <assemblyIdentity name="Abbey Trading Store" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+f5JPRmNl0oERPMshnLHUnox2dA=</dsig:DigestValue>
+        <dsig:DigestValue>PB59NygZeziZkMcnwowXtDmzQD0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -80,7 +80,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>cg2yapeHKpcPQaVzTslixDOlvTE=</dsig:DigestValue>
+      <dsig:DigestValue>Z/O48XyvaDxG+rep/4P+C1Hb39w=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Abbey Trading Store.exe.config" size="498">

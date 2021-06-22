@@ -114,11 +114,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(357, 145);
+            this.label4.Location = new System.Drawing.Point(441, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(523, 45);
+            this.label4.Size = new System.Drawing.Size(347, 45);
             this.label4.TabIndex = 5;
-            this.label4.Text = "ABBEY TRADING  STORE SYSTEM";
+            this.label4.Text = "ABBEY FARM SUPPLY";
             // 
             // panel1
             // 

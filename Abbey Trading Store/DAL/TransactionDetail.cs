@@ -21,6 +21,7 @@ namespace Abbey_Trading_Store.DAL
         private DateTime added_date;
         private string added_by;
         private int Invoice_id;
+        private int Profit;
 
         //Properties
         public int id { get { return ID;} set {ID = value;} }
@@ -32,6 +33,7 @@ namespace Abbey_Trading_Store.DAL
         public DateTime Added_date { get { return added_date; } set { added_date = value;} }
         public string Added_by { get { return added_by; } set { added_by = value; } }
         public int invoice_id {get{return Invoice_id;}set{Invoice_id = value;}}
+        public int profit { get { return Profit; } set { Profit = value; } }
 
 #region Insert Transaction Details
         public bool Insert()
@@ -39,7 +41,7 @@ namespace Abbey_Trading_Store.DAL
             bool isSuccess = false;
             const string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
             OleDbConnection conn = new OleDbConnection(connection);
-            string cmdstring = "INSERT INTO `Transaction Details`(`product_name`,`rate`,`Qty`,`total`,`dea_cust_name`,`added_by`,`Invoice_id`)VALUES(@product_name,@rate,@Qty,@total,@dea_cust_name,@added_by,@Invoice_id)";
+            string cmdstring = "INSERT INTO `Transaction Details`(`product_name`,`rate`,`Qty`,`total`,`dea_cust_name`,`added_by`,`Invoice_id`,`Profit`)VALUES(@product_name,@rate,@Qty,@total,@dea_cust_name,@added_by,@Invoice_id,@Profit)";
 
 
             try
@@ -53,6 +55,7 @@ namespace Abbey_Trading_Store.DAL
                 cmd.Parameters.AddWithValue("@dea_cust_name", dea_cust_name);
                 cmd.Parameters.AddWithValue("@added_by", added_by);
                 cmd.Parameters.AddWithValue("@Invoice_id", Invoice_id);
+                cmd.Parameters.AddWithValue("@Profit", Profit);
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
                 if (rows > 0)
@@ -87,7 +90,7 @@ namespace Abbey_Trading_Store.DAL
             DataTable dt = new DataTable();
             const string connection = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Abbey Trading Store.accdb;";
             OleDbConnection conn = new OleDbConnection(connection);
-            string cmdstring = "SELECT product_name,rate,Qty,Total,dea_cust_name,added_date,added_by FROM `Transaction Details` WHERE `dea_cust_name` = @dea_cust_name";
+            string cmdstring = "SELECT product_name,rate,Qty,Total,dea_cust_name,added_date,added_by,Profit FROM `Transaction Details` WHERE `dea_cust_name` = @dea_cust_name";
             try
             {
                 OleDbCommand cmd = new OleDbCommand(cmdstring, conn);

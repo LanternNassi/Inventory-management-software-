@@ -162,11 +162,11 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(371, 114);
+            this.label4.Location = new System.Drawing.Point(457, 92);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(523, 45);
+            this.label4.Size = new System.Drawing.Size(347, 45);
             this.label4.TabIndex = 4;
-            this.label4.Text = "ABBEY TRADING  STORE SYSTEM";
+            this.label4.Text = "ABBEY FARM SUPPLY";
             // 
             // user
             // 
@@ -427,7 +427,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Admin_dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Abbey Trading Store(Admin)";
+            this.Text = "ABBEY FARM SUPPLY (Admin)";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Admin_dashboard_FormClosed);
             this.Load += new System.EventHandler(this.Admin_dashboard_Load);

@@ -25,6 +25,7 @@ namespace Abbey_Trading_Store.UI
         DataTable dt = new DataTable();
         DataTable dts = new DataTable();
         product product = new product();
+        int initial_price;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -52,6 +53,7 @@ namespace Abbey_Trading_Store.UI
             dt.Columns.Add("Quantity");
             dt.Columns.Add("Rate");
             dt.Columns.Add("Total");
+            dt.Columns.Add("Profit");
 
             dts.Columns.Add("ID");
             dts.Columns.Add("type");
@@ -101,6 +103,15 @@ namespace Abbey_Trading_Store.UI
             pname.Text = result[0];
             p_rate.Text = result[1];
             p_inventory.Text = result[2];
+            if (result[1] == null)
+            {
+
+            }
+            else
+            {
+                initial_price = int.Parse(result[1]);
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -111,6 +122,7 @@ namespace Abbey_Trading_Store.UI
             decimal quantity = decimal.Parse(p_quantity.Text);
             decimal total = rate * quantity;
             decimal subtotals = decimal.Parse(subtotal.Text);
+            decimal profit = ((quantity * rate) - (quantity * initial_price));
 
             //calulations
             subtotals += total;
@@ -122,7 +134,7 @@ namespace Abbey_Trading_Store.UI
             }
             else
             {
-                dt.Rows.Add(productname, quantity, rate,total);
+                dt.Rows.Add(productname, quantity, rate,total,profit);
                 dgv_products.DataSource = dt;
                 pname.Text = "";
                 p_search.Text = "";
@@ -233,8 +245,15 @@ namespace Abbey_Trading_Store.UI
             bool success = false;
             //using (TransactionScope scope = new TransactionScope())
             //{
+
             int Transactionid = -1;
             Transactions transact = new Transactions();
+            int ovp = 0;
+            for (int h = 0; h <= ((dt.Rows.Count) - 1); h++)
+            {
+                ovp += int.Parse(dt.Rows[h][4].ToString());
+            }
+           
             transact.Added_by = Login_form.user;
             transact.Dea_Cust_name = name.Text;
             transact.Discount = int.Parse(textBox13.Text);
@@ -243,6 +262,15 @@ namespace Abbey_Trading_Store.UI
             transact.Type = course;
             transact.Return_amount = int.Parse(return_amount.Text);
             transact.Paid_amount = int.Parse(paid_amount.Text);
+            if (Types.Text == "Sales")
+            {
+                transact.Total_Profit = ovp - int.Parse(textBox13.Text);
+            }
+            else
+            {
+                transact.Total_Profit = 0;
+            }
+            
 
             // adding transaction to dataTable dts
             dts.Rows.Add("2", transact.Type, name.Text, grandtotal.Text, DateTime.Now, textBox13.Text, Login_form.user, paid_amount.Text, return_amount.Text);
@@ -250,20 +278,29 @@ namespace Abbey_Trading_Store.UI
             TransactionDetail TD = new TransactionDetail();
             int recorder = 0;
             int i;
+            
             for (i=0; i<dt.Rows.Count; i++){
 
                 TD.Product_name = dt.Rows[i][0].ToString();
                 TD.qty = decimal.Parse(dt.Rows[i][1].ToString());
                 TD.Rate = decimal.Parse(dt.Rows[i][2].ToString());
                 TD.Total = decimal.Parse(dt.Rows[i][3].ToString());
+                TD.profit = int.Parse(dt.Rows[i][4].ToString());
                 TD.Dea_Cust_name = name.Text;
                 TD.Added_by = Login_form.user;
+                if (Types.Text == "Sales")
+                {
+                    TD.profit = int.Parse(dt.Rows[i][4].ToString());   
+                }
                 TD.invoice_id = x;
                 bool y = TD.Insert();
                 recorder += 1;
                 if (Types.Text == "Sales")
                 {
-                    check = product.DecreaseProduct(TD.qty, TD.Product_name); 
+                    check = product.DecreaseProduct(TD.qty, TD.Product_name);
+                    
+                    
+                    
 
                 }
                 else if (Types.Text == "Purchase")

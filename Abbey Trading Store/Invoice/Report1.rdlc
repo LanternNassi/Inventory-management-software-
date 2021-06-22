@@ -735,7 +735,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>ABBEY TRADING STORE</Value>
+                  <Value>ABBEY FARM SUPPLY</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
                     <FontWeight>Bold</FontWeight>
@@ -747,9 +747,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.2675in</Top>
-          <Left>1.43417in</Left>
+          <Left>1.63556in</Left>
           <Height>0.25in</Height>
-          <Width>2.16667in</Width>
+          <Width>1.89932in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -829,7 +829,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Dealers in agricultural products and machinery</Value>
+                  <Value>Dealers in all insecticides, pesticides,etc</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -840,7 +840,7 @@
           <Top>0.58694in</Top>
           <Left>1.19799in</Left>
           <Height>0.25in</Height>
-          <Width>2.97222in</Width>
+          <Width>3.03472in</Width>
           <ZIndex>3</ZIndex>
           <Style>
             <Border>
@@ -859,7 +859,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Tel : 0758989094 , 0707437906</Value>
+                  <Value>Tel:0758989094,0753103488</Value>
                   <Style />
                 </TextRun>
               </TextRuns>
@@ -867,8 +867,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox15</rd:DefaultName>
-          <Top>0.90639in</Top>
-          <Left>1.43417in</Left>
+          <Top>0.87861in</Top>
+          <Left>1.63556in</Left>
           <Height>0.25in</Height>
           <Width>1.95833in</Width>
           <ZIndex>4</ZIndex>
@@ -963,7 +963,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Thanks for Purchasing dear  </Value>
+                  <Value>Thanks for purchasing   </Value>
                   <Style>
                     <FontStyle>Italic</FontStyle>
                     <FontWeight>Bold</FontWeight>

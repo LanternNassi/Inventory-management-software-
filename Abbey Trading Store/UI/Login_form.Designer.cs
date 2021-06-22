@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_form));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.usertype_cmbx = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.password = new System.Windows.Forms.TextBox();
             this.username = new System.Windows.Forms.TextBox();
@@ -38,7 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.usertype_cmbx = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,19 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(216, 326);
             this.panel1.TabIndex = 0;
+            // 
+            // usertype_cmbx
+            // 
+            this.usertype_cmbx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usertype_cmbx.ForeColor = System.Drawing.Color.Red;
+            this.usertype_cmbx.FormattingEnabled = true;
+            this.usertype_cmbx.Items.AddRange(new object[] {
+            "normal",
+            "admin"});
+            this.usertype_cmbx.Location = new System.Drawing.Point(19, 235);
+            this.usertype_cmbx.Name = "usertype_cmbx";
+            this.usertype_cmbx.Size = new System.Drawing.Size(168, 29);
+            this.usertype_cmbx.TabIndex = 8;
             // 
             // button1
             // 
@@ -144,19 +157,6 @@
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // usertype_cmbx
-            // 
-            this.usertype_cmbx.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usertype_cmbx.ForeColor = System.Drawing.Color.Red;
-            this.usertype_cmbx.FormattingEnabled = true;
-            this.usertype_cmbx.Items.AddRange(new object[] {
-            "normal",
-            "admin"});
-            this.usertype_cmbx.Location = new System.Drawing.Point(19, 235);
-            this.usertype_cmbx.Name = "usertype_cmbx";
-            this.usertype_cmbx.Size = new System.Drawing.Size(168, 29);
-            this.usertype_cmbx.TabIndex = 8;
             // 
             // Login_form
             // 

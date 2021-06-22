@@ -42,6 +42,7 @@ namespace Abbey_Trading_Store.UI
             Categories category = new Categories();
             category.Title = title.Text;
             category.Description = description.Text;
+            category.Added_by = Login_form.user;
             bool affected = category.insert();
             if (affected == true)
             {

@@ -185,9 +185,9 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(242, 434);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 21);
+            this.label5.Size = new System.Drawing.Size(81, 21);
             this.label5.TabIndex = 37;
-            this.label5.Text = "T/L Discounts";
+            this.label5.Text = "T/L Profits";
             // 
             // txtbx_discounts
             // 
